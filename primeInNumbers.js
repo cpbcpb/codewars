@@ -6,10 +6,25 @@
 // Test.assertEquals(primeFactors(7775460),"(2**2)(3**3)(5)(7)(11**2)(17)")
 //iteration 2
 //should return the prime factors only
+function primeFactors(n) {
+  let factorPairsArray = [];
+  for (let i = 2; i <= n; i++) {
+    //check if a factor
+    if (n % i === 0) {
+      let quotient = n / i;
+      let factorPair = {
+        factor1: quotient,
+        factor2: i
+      };
+      factorPairsArray.push(factorPair);
+    }
+  }
+  console.log(factorPairsArray);
+}
 
 //iteration 1
 //returns all the factors
-function primeFactors(n) {
+function Factors(n) {
   let factorPairsArray = [];
   for (let i = 2; i <= n; i++) {
     //check if a factor
