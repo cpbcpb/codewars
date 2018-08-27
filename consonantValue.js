@@ -1,9 +1,55 @@
 function solve(s) {
-    let consonantSub = s.split("u");
+  let sArray = Array.from(s);
+  let alphaArray = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z"
+  ];
+  let maxScore = 0;
+  let score = 0;
+  sArray.forEach(function(letter) {
+    console.log("all", letter);
+    if (
+      letter === "a" ||
+      letter === "e" ||
+      letter === "i" ||
+      letter === "o" ||
+      letter === "u"
+    ) {
+      score = 0;
+    } else {
+      score += alphaArray.indexOf(letter) + 1;
+      if (score > maxScore) {
+        maxScore = score;
+      }
+    }
+  });
 
-  return consonantSub;
+  return maxScore;
 }
-
 solve("chruschtschov");
 
 //80
